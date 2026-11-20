@@ -1,0 +1,320 @@
+/* ==========================================================================
+   Juniper Dental — Style Sheet
+   A calm, trustworthy visual system for a dental clinic.
+   Palette: Porcelain (base), Pine (primary), Sage (support), Amber (single accent)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600;700&display=swap');
+
+/* -- Tokens --------------------------------------------------------------- */
+
+:root {
+  /* Color */
+  --color-porcelain: #F5F7F5;
+  --color-porcelain-dim: #ECEFED;
+  --color-white: #FFFFFF;
+  --color-pine: #1F4D46;
+  --color-pine-dark: #163731;
+  --color-pine-tint: #E4EDE8;
+  --color-sage: #AFC9BE;
+  --color-sage-light: #E4EDE8;
+  --color-amber: #D4A054;
+  --color-amber-dark: #B9822F;
+  --color-amber-tint: #F6EADA;
+  --color-ink: #16221E;
+  --color-ink-soft: #4B5854;
+  --color-line: #D9E2DC;
+  --color-error: #B14639;
+  --color-error-tint: #F5E4E1;
+
+  /* Type */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Karla', 'Segoe UI', -apple-system, sans-serif;
+
+  --text-xs: 0.8125rem;   /* 13px */
+  --text-sm: 0.9375rem;   /* 15px */
+  --text-base: 1.0625rem; /* 17px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.75rem;     /* 28px */
+  --text-2xl: 2.5rem;     /* 40px */
+  --text-3xl: 3.5rem;     /* 56px */
+
+  /* Space (4px base unit) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* Shape & depth */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 8px 24px rgba(22, 34, 30, 0.08);
+  --shadow-lift: 0 16px 40px rgba(22, 34, 30, 0.12);
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* -- Reset & base ----------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-porcelain);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a { color: var(--color-pine); text-decoration-color: var(--color-sage); text-underline-offset: 3px; }
+a:hover { color: var(--color-pine-dark); }
+
+/* -- Typography --------------------------------------------------------- */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-pine-dark);
+  line-height: 1.15;
+  margin: 0 0 var(--space-4);
+}
+
+h1 { font-size: var(--text-3xl); letter-spacing: -0.01em; }
+h2 { font-size: var(--text-2xl); letter-spacing: -0.01em; }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); font-weight: 600; }
+
+p { margin: 0 0 var(--space-4); max-width: 62ch; }
+
+.lede {
+  font-size: var(--text-lg);
+  color: var(--color-ink-soft);
+  max-width: 52ch;
+}
+
+.eyebrow {
+  font-weight: 600;
+  color: var(--color-pine);
+  font-size: var(--text-sm);
+}
+
+small, .caption {
+  font-size: var(--text-xs);
+  color: var(--color-ink-soft);
+}
+
+/* -- Layout --------------------------------------------------------------- */
+
+.container {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.section {
+  padding-block: var(--space-9);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 720px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .container { padding-inline: var(--space-4); }
+  .section { padding-block: var(--space-7); }
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+}
+
+/* -- Buttons -------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s var(--ease), background-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-pine);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--color-pine);
+  color: var(--color-white);
+}
+.btn-primary:hover { background: var(--color-pine-dark); }
+
+.btn-accent {
+  /* Reserved for the single action a patient actually needs to take */
+  background: var(--color-amber);
+  color: var(--color-ink);
+}
+.btn-accent:hover { background: var(--color-amber-dark); color: var(--color-white); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-pine);
+  border-color: var(--color-pine);
+}
+.btn-secondary:hover { background: var(--color-pine-tint); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-ink);
+  padding-inline: 0.25rem;
+}
+.btn-ghost:hover { color: var(--color-pine); }
+
+/* -- Cards ------------------------------------------------------------------ */
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.card-tinted {
+  background: var(--color-sage-light);
+  border-color: transparent;
+}
+
+.card-service h4 { margin-bottom: var(--space-2); }
+.card-service p { margin-bottom: var(--space-4); color: var(--color-ink-soft); }
+
+/* -- Badges & tags ----------------------------------------------------------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-pine-dark);
+  background: var(--color-sage-light);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.85rem;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-pine);
+}
+
+/* -- Forms -------------------------------------------------------------- */
+
+.field { margin-bottom: var(--space-5); }
+
+.field label {
+  display: block;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-2);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-pine);
+  box-shadow: 0 0 0 3px var(--color-pine-tint);
+}
+
+/* -- Navigation --------------------------------------------------------- */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-4);
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--color-pine-dark);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--color-ink);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-links a:hover { color: var(--color-pine); }
+
+/* -- Notices -------------------------------------------------------------- */
+
+.notice {
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.notice-info {
+  background: var(--color-pine-tint);
+  color: var(--color-pine-dark);
+}
+
+.notice-error {
+  background: var(--color-error-tint);
+  color: var(--color-error);
+}
+
+/* -- Utilities -------------------------------------------------------------- */
+
+.text-soft { color: var(--color-ink-soft); }
+.text-pine { color: var(--color-pine); }
+.bg-sage { background: var(--color-sage-light); }
+.divider { border: none; border-top: 1px solid var(--color-line); margin: var(--space-7) 0; }

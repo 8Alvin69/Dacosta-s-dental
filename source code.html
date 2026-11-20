@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=49ec4d48-2165-4866-a179-afacffad4a35
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dacosta's Dentals — Dental Clinic, Accra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6FAF8;
+  --surface:#FFFFFF;
+  --mint-100:#E3F2EC;
+  --mint-200:#CFE9DF;
+  --ink:#0F2A26;
+  --ink-soft:#4C6B64;
+  --teal-900:#0C3B36;
+  --teal-700:#11534C;
+  --teal-600:#156B61;
+  --coral:#FF6B45;
+  --coral-dark:#E1532F;
+  --gold:#E3A93C;
+  --line:rgba(15,42,38,.12);
+  --line-strong:rgba(15,42,38,.22);
+  --shadow:0 18px 40px -22px rgba(12,59,54,.35);
+  --radius:18px;
+  --radius-sm:10px;
+  --font-display:'Fraunces',serif;
+  --font-body:'Plus Jakarta Sans',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;}
+a{color:inherit;text-decoration:none;}
+ul{margin:0;padding:0;list-style:none;}
+button{font-family:inherit;cursor:pointer;}
+input,select,textarea{font-family:inherit;font-size:.95rem;}
+h1,h2,h3,h4{font-family:var(--font-display);margin:0;color:var(--teal-900);font-weight:600;}
+p{margin:0;}
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 28px;}
+.icon{width:1.4em;height:1.4em;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.icon-fill{fill:currentColor;stroke:none;}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;
+  padding:.85em 1.5em;border-radius:100px;border:1.5px solid transparent;
+  font-weight:700;font-size:.92rem;letter-spacing:.01em;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+  white-space:nowrap;
+}
+.btn:active{transform:translateY(1px) scale(.99);}
+.btn-primary{background:var(--coral);color:#fff;box-shadow:0 12px 24px -10px rgba(255,107,69,.55);}
+.btn-primary:hover{background:var(--coral-dark);}
+.btn-dark{background:var(--teal-900);color:#fff;}
+.btn-dark:hover{background:var(--teal-700);}
+.btn-ghost{background:transparent;border-color:var(--line-strong);color:var(--teal-900);}
+.btn-ghost:hover{border-color:var(--teal-700);background:var(--mint-100);}
+.btn-light{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.4);}
+.btn-light:hover{background:rgba(255,255,255,.24);}
+.btn-block{width:100%;justify-content:center;}
+.btn-sm{padding:.55em 1.1em;font-size:.82rem;}
+.btn[disabled]{opacity:.45;cursor:not-allowed;}
+
+/* ---------- Header / Nav ---------- */
+.site-header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(246,250,248,.88);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-row{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:1180px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:.6em;font-family:var(--font-display);font-weight:700;font-size:1.18rem;color:var(--teal-900);}
+.brand-mark{width:38px;height:38px;border-radius:50%;background:var(--teal-900);position:relative;flex-shrink:0;}
+.brand-mark svg{position:absolute;inset:0;width:100%;height:100%;}
+.brand small{display:block;font-family:var(--font-mono);font-weight:500;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
+nav.main-nav{display:flex;align-items:center;gap:6px;}
+.main-nav a{
+  padding:.6em 1em;border-radius:100px;font-size:.92rem;font-weight:600;color:var(--ink-soft);
+  transition:background .15s,color .15s;
+}
+.main-nav a:hover{background:var(--mint-100);color:var(--teal-900);}
+.main-nav a.active{background:var(--teal-900);color:#fff;}
+.header-actions{display:flex;align-items:center;gap:10px;}
+.staff-link{display:flex;align-items:center;gap:.35em;font-size:.82rem;font-weight:700;color:var(--ink-soft);padding:.5em .3em;}
+.staff-link:hover{color:var(--teal-900);}
+.menu-toggle{display:none;background:none;border:1.5px solid var(--line-strong);border-radius:10px;padding:.5em;color:var(--teal-900);}
+.mobile-panel{display:none;}
+@media (max-width:900px){
+  .main-nav{display:none;}
+  .header-actions .btn-ghost{display:none;}
+  .menu-toggle{display:flex;}
+  .mobile-panel{
+    display:block;max-height:0;overflow:hidden;transition:max-height .25s ease;border-top:1px solid var(--line);
+  }
+  .mobile-panel.open{max-height:480px;}
+  .mobile-panel-inner{padding:14px 28px 22px;display:flex;flex-direction:column;gap:4px;}
+  .mobile-panel-inner a{padding:.7em .4em;font-weight:700;color:var(--teal-900);border-bottom:1px solid var(--line);}
+  .mobile-panel-inner .btn{margin-top:10px;}
+}
+
+/* ---------- Page sections ---------- */
+.page{display:none;}
+.page.active{display:block;}
+section.block{padding:88px 0;}
+@media (max-width:700px){section.block{padding:56px 0;}}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.5em;font-family:var(--font-mono);font-size:.74rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--coral-dark);font-weight:600;margin-bottom:14px;
+}
+.eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--coral);}
+.section-head{max-width:640px;margin-bottom:48px;}
+.section-head h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.15;}
+.section-head p{margin-top:14px;color:var(--ink-soft);font-size:1.05rem;}
+.smile-rule{margin-top:18px;width:74px;height:14px;}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:var(--teal-900);color:#fff;padding:64px 0 0;}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+@media (max-width:880px){.hero-grid{grid-template-columns:1fr;}}
+.hero-badge{display:inline-flex;align-items:center;gap:.5em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);padding:.5em 1em;border-radius:100px;font-size:.82rem;font-weight:600;margin-bottom:22px;}
+.hero h1{color:#fff;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.08;font-weight:600;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero p.lead{margin-top:20px;font-size:1.12rem;color:rgba(255,255,255,.78);max-width:480px;}
+.hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+.hero-art{position:relative;aspect-ratio:1/1;max-width:440px;margin:0 auto;}
+.hero-art .ring{position:absolute;inset:0;border-radius:50%;border:1.5px dashed rgba(255,255,255,.25);}
+.hero-art .ring2{position:absolute;inset:38px;border-radius:50%;background:radial-gradient(circle at 32% 28%, rgba(255,255,255,.16), transparent 60%), var(--teal-700);}
+.hero-art .face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.hero-art .face svg{width:62%;}
+.hero-art .chip{position:absolute;background:#fff;color:var(--teal-900);border-radius:14px;padding:12px 16px;box-shadow:var(--shadow);font-family:var(--font-mono);}
+.hero-art .chip strong{display:block;font-size:1.3rem;font-family:var(--font-display);color:var(--teal-900);}
+.hero-art .chip span{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);}
+.hero-art .chip-a{top:6%;left:-4%;}
+.hero-art .chip-b{bottom:4%;right:-6%;}
+
+.stats-strip{background:var(--teal-900);border-top:1px solid rgba(255,255,255,.12);}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:34px 0;}
+@media (max-width:760px){.stats-row{grid-template-columns:repeat(2,1fr);}}
+.stat{color:#fff;text-align:left;border-left:1px solid rgba(255,255,255,.18);padding-left:20px;}
+.stats-row .stat:first-child{border-left:none;padding-left:0;}
+.stat strong{display:block;font-family:var(--font-mono);font-size:clamp(1.6rem,2.4vw,2.1rem);color:var(--gold);}
+.stat span{font-size:.82rem;color:rgba(255,255,255,.72);}
+
+.smile-divider{display:block;width:100%;height:54px;margin-top:-1px;}
+
+/* ---------- Cards / grids ---------- */
+.grid{display:grid;gap:24px;}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+.grid-4{grid-template-columns:repeat(4,1fr);}
+@media (max-width:920px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:600px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent;}
+.card .icon-wrap{width:48px;height:48px;border-radius:13px;background:var(--mint-100);color:var(--teal-700);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.card h3,.card h4{font-size:1.12rem;margin-bottom:8px;}
+.card p{color:var(--ink-soft);font-size:.94rem;}
+.card .price{margin-top:14px;font-family:var(--font-mono);font-size:.84rem;color:var(--coral-dark);font-weight:600;}
+
+.services-home{background:var(--bg);}
+
+.team-preview .card{text-align:center;}
+.avatar{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:var(--font-mono);font-weight:600;color:#fff;font-size:1rem;}
+.role{font-size:.82rem;color:var(--coral-dark);font-weight:700;margin-bottom:6px;}
+.cred{font-size:.82rem;color:var(--ink-soft);margin-top:6px;}
+
+.testimonials{background:var(--teal-900);color:#fff;}
+.testimonials .section-head h2{color:#fff;}
+.testimonials .section-head p{color:rgba(255,255,255,.7);}
+.t-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:26px;}
+.stars{display:flex;gap:3px;color:var(--gold);margin-bottom:14px;}
+.stars .icon{width:1.1em;height:1.1em;}
+.t-card p{color:rgba(255,255,255,.85);font-size:.96rem;}
+.t-by{display:flex;align-items:center;gap:10px;margin-top:18px;}
+.t-by .avatar{width:36px;height:36px;font-size:.76rem;margin:0;}
+.t-by strong{display:block;font-size:.88rem;}
+.t-by span{font-size:.76rem;color:rgba(255,255,255,.55);}
+
+.cta-band{background:var(--mint-100);border-radius:24px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin:0 28px;max-width:1124px;margin-inline:auto;}
+.cta-band h3{font-size:1.5rem;max-width:420px;}
+.cta-band .actions{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* timeline / values / about */
+.about-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+@media (max-width:880px){.about-split{grid-template-columns:1fr;}}
+.about-split p+p{margin-top:14px;color:var(--ink-soft);}
+.timeline{border-left:2px solid var(--mint-200);margin-left:6px;}
+.timeline li{position:relative;padding:0 0 28px 28px;}
+.timeline li::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--coral);border:3px solid var(--bg);}
+.timeline .year{font-family:var(--font-mono);font-weight:600;color:var(--teal-700);font-size:.82rem;letter-spacing:.05em;}
+.timeline h4{margin-top:4px;font-size:1.05rem;}
+.timeline p{color:var(--ink-soft);font-size:.92rem;margin-top:4px;}
+
+.values-grid .card{background:var(--mint-100);border:none;}
+
+/* gallery */
+.tile{aspect-ratio:4/3;border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#fff;font-weight:700;font-size:.92rem;text-align:center;padding:18px;}
+.tile .icon{width:30px;height:30px;}
+.ba-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;}
+.ba-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.ba-imgs div{aspect-ratio:1/1;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-mono);font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;}
+.ba-card h4{margin-top:14px;font-size:.98rem;}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;}
+@media (max-width:880px){.contact-grid{grid-template-columns:1fr;}}
+.info-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
+.info-row:last-of-type{border-bottom:none;}
+.info-row .icon-wrap{width:42px;height:42px;flex-shrink:0;}
+.info-row h4{font-size:.95rem;margin-bottom:4px;}
+.info-row p{color:var(--ink-soft);font-size:.9rem;}
+table.hours{width:100%;border-collapse:collapse;margin-top:18px;font-size:.9rem;}
+table.hours td{padding:10px 0;border-bottom:1px solid var(--line);color:var(--ink-soft);}
+table.hours td:last-child{text-align:right;color:var(--ink);font-weight:600;}
+
+/* forms */
+.form-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow);}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media (max-width:600px){.form-grid{grid-template-columns:1fr;}}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+.field label{font-size:.82rem;font-weight:700;color:var(--teal-900);}
+.field .hint{font-size:.76rem;color:var(--ink-soft);font-weight:500;}
+.field input,.field select,.field textarea{
+  border:1.5px solid var(--line-strong);border-radius:var(--radius-sm);padding:.7em .9em;background:var(--bg);color:var(--ink);
+  transition:border-color .15s, box-shadow .15s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal-700);box-shadow:0 0 0 3px rgba(17,83,76,.12);}
+.field textarea{resize:vertical;min-height:100px;}
+.checkline{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:var(--ink-soft);margin-bottom:14px;}
+.checkline input{margin-top:3px;}
+.fieldset-title{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-700);font-weight:600;margin:26px 0 14px;padding-top:18px;border-top:1px dashed var(--line-strong);}
+.fieldset-title:first-of-type{border-top:none;padding-top:0;margin-top:0;}
+.form-narrow{max-width:620px;margin:0 auto;}
+.alert{display:flex;gap:10px;align-items:flex-start;background:var(--mint-100);border:1px solid var(--mint-200);color:var(--teal-900);padding:14px 16px;border-radius:var(--radius-sm);font-size:.88rem;margin-bottom:20px;}
+.alert.success{background:#E9F6EC;border-color:#BFE3C8;}
+.alert.error{background:#FDECE9;border-color:#F6C6BA;color:#8A2E1A;}
+.link-inline{color:var(--coral-dark);font-weight:700;}
+.link-inline:hover{text-decoration:underline;}
+
+/* staff portal */
+.staff-shell{display:none;}
+.staff-login-wrap{max-width:420px;margin:0 auto;text-align:center;}
+.staff-login-wrap .icon-wrap{margin:0 auto 18px;width:56px;height:56px;border-radius:16px;}
+.auth-switch{display:grid;grid-template-columns:1fr 1fr;gap:5px;background:var(--mint-100);padding:5px;border-radius:12px;margin-bottom:22px;}
+.auth-switch button{border:0;background:transparent;color:var(--ink-soft);border-radius:9px;padding:9px;font-weight:700;}
+.auth-switch button.active{background:var(--surface);color:var(--teal-900);box-shadow:0 4px 14px rgba(12,59,54,.1);}
+.staff-auth-form[hidden]{display:none;}
+.portal-header{position:sticky;top:0;z-index:50;background:var(--teal-900);color:#fff;}
+.portal-row{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:1180px;margin:0 auto;}
+.portal-brand{display:flex;align-items:center;gap:10px;font-weight:700;}
+.portal-tabs{display:flex;gap:4px;background:var(--bg);border-bottom:1px solid var(--line);overflow-x:auto;}
+.portal-tabs .container{display:flex;gap:4px;}
+.portal-tab{padding:14px 18px;font-size:.88rem;font-weight:700;color:var(--ink-soft);border-bottom:3px solid transparent;white-space:nowrap;}
+.portal-tab.active{color:var(--teal-900);border-color:var(--coral);}
+.portal-panel{display:none;padding:32px 0 64px;}
+.portal-panel.active{display:block;}
+.dash-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:8px;}
+@media (max-width:880px){.dash-cards{grid-template-columns:repeat(2,1fr);}}
+.dash-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+.dash-card .icon-wrap{width:38px;height:38px;margin-bottom:12px;}
+.dash-card strong{display:block;font-family:var(--font-mono);font-size:1.7rem;color:var(--teal-900);}
+.dash-card span{font-size:.8rem;color:var(--ink-soft);}
+.panel-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:34px 0 16px;}
+.panel-bar h3{font-size:1.2rem;}
+.panel-bar .filters{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.panel-bar select{border:1.5px solid var(--line-strong);border-radius:var(--radius-sm);padding:.5em .8em;background:var(--surface);font-size:.85rem;}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);}
+table.data{width:100%;border-collapse:collapse;font-size:.86rem;min-width:760px;}
+table.data th{text-align:left;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);background:var(--mint-100);padding:12px 16px;white-space:nowrap;}
+table.data td{padding:12px 16px;border-bottom:1px solid var(--line);white-space:nowrap;color:var(--ink);}
+table.data tr:last-child td{border-bottom:none;}
+table.data tbody tr:hover{background:var(--mint-100);}
+.badge{display:inline-flex;align-items:center;padding:.3em .8em;border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.02em;}
+.badge.upcoming{background:#E9F6EC;color:#1E7C3B;}
+.badge.completed{background:var(--mint-100);color:var(--teal-700);}
+.badge.cancelled{background:#FDECE9;color:#B23E22;}
+.empty-row td{text-align:center;color:var(--ink-soft);padding:34px 16px;}
+.icon-action{background:none;border:none;color:var(--ink-soft);padding:6px;border-radius:8px;}
+.icon-action:hover{background:var(--mint-100);color:var(--teal-900);}
+.reports-grid{margin-top:8px;}
+.report-result{margin-top:14px;background:var(--mint-100);border-radius:var(--radius-sm);padding:16px;font-size:.86rem;color:var(--ink);display:none;}
+.report-result.show{display:block;}
+.report-result strong{font-family:var(--font-mono);color:var(--teal-900);}
+
+/* footer */
+footer{background:var(--teal-900);color:rgba(255,255,255,.75);padding:64px 0 28px;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:36px;}
+@media (max-width:820px){.footer-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:560px){.footer-grid{grid-template-columns:1fr;}}
+.footer-grid h5{color:#fff;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+.footer-grid li{margin-bottom:9px;font-size:.88rem;}
+.footer-grid a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;color:rgba(255,255,255,.5);}
+
+/* toast */
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--teal-900);color:#fff;padding:14px 22px;border-radius:100px;font-size:.88rem;font-weight:600;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s, transform .25s;z-index:200;display:flex;align-items:center;gap:8px;}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ICON SPRITE -->
+<svg class="visually-hidden" aria-hidden="true">
+<symbol id="ic-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></symbol>
+<symbol id="ic-sparkle" viewBox="0 0 24 24"><path d="M12 3v5M12 16v5M4.5 8.5l4 1.5M15.5 14l4 1.5M4.5 15.5l4-1.5M15.5 10l4-1.5"/><circle cx="12" cy="12" r="2.6"/></symbol>
+<symbol id="ic-tooth" viewBox="0 0 24 24"><path d="M12 4c-2.4 0-4.6 1.4-4.6 3.9 0 1.3.3 2.6.7 4.4.5 2.2 1 4.6 1.7 6.6.3.8.7 1.1 1 .3.4-1 .7-2.7 1.2-2.7s.8 1.7 1.2 2.7c.3.8.7.5 1-.3.7-2 1.2-4.4 1.7-6.6.4-1.8.7-3.1.7-4.4C16.6 5.4 14.4 4 12 4z"/></symbol>
+<symbol id="ic-braces" viewBox="0 0 24 24"><path d="M3 9c0 6 4 11 9 11s9-5 9-11"/><path d="M3 9c0-2 1-4 4-4M21 9c0-2-1-4-4-4"/><circle cx="7" cy="9" r="1.1"/><circle cx="12" cy="11" r="1.1"/><circle cx="17" cy="9" r="1.1"/></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3.5 7.8-7 9-3.5-1.2-7-4-7-9V6l7-3z"/><path d="M9.5 12l2 2 3.5-4"/></symbol>
+<symbol id="ic-child" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-4 3-6.5 7-6.5s7 2.5 7 6.5"/><path d="M9.5 8c.6.6 1.3.9 2.5.9s1.9-.3 2.5-.9"/></symbol>
+<symbol id="ic-gum" viewBox="0 0 24 24"><path d="M4 14c0-5 3.5-9 8-9s8 4 8 9-3 3-8 3-8 2-8-3z"/></symbol>
+<symbol id="ic-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4 7 7 0 0 0 20 14.5z"/></symbol>
+<symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+<symbol id="ic-phone" viewBox="0 0 24 24"><path d="M6 4h3l1.6 4.5-2 1.6a13 13 0 0 0 5.3 5.3l1.6-2L20 15v3a2 2 0 0 1-2.2 2C9.5 19.5 4.5 14.5 4 6.2A2 2 0 0 1 6 4z"/></symbol>
+<symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4.5 7l7.5 6 7.5-6"/></symbol>
+<symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></symbol>
+<symbol id="ic-star" viewBox="0 0 24 24"><path class="icon-fill" d="M12 3.5l2.6 5.5 6 .7-4.4 4.1 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.7l6-.7z" stroke="none"/></symbol>
+<symbol id="ic-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="ic-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+<symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="ic-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+<symbol id="ic-chart" viewBox="0 0 24 24"><path d="M4 20V10M11 20V4M18 20v-7"/><path d="M3 20h18"/></symbol>
+<symbol id="ic-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="8.5" r="2.4"/><path d="M16 14.6c2.6.4 4.5 2.3 4.5 5.4"/></symbol>
+<symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></symbol>
+<symbol id="ic-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h13l-3 4 3 4H5"/></symbol>
+<symbol id="ic-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5"/><path d="M4 19h16"/></symbol>
+<symbol id="ic-logout" viewBox="0 0 24 24"><path d="M9 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h3"/><path d="M16 16l4-4-4-4"/><path d="M20 12H9"/></symbol>
+<symbol id="ic-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
+<symbol id="ic-edit" viewBox="0 0 24 24"><path d="M4 17.5V20h2.5L19 7.5 16.5 5z"/></symbol>
+<symbol id="ic-trash" viewBox="0 0 24 24"><path d="M5 7h14M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M7 7l1 13h8l1-13"/></symbol>
+</svg>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-row">
+    <a href="#" class="brand" data-nav="home">
+      <span class="brand-mark">
+        <svg viewBox="0 0 38 38" width="38" height="38"><circle cx="6" cy="13" r="1.6" fill="#fff"/><circle cx="14" cy="13" r="1.6" fill="#fff"/><path d="M5 21c1.6 3.2 4.4 5 5 5s3.4-1.8 5-5" stroke="#FF6B45" stroke-width="2.1" fill="none" stroke-linecap="round" transform="translate(4,0)"/></svg>
+      </span>
+      <span>Dacosta's Dentals<small>Dental Clinic · Accra</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#" data-nav="home" class="active">Home</a>
+      <a href="#" data-nav="services">Services</a>
+      <a href="#" data-nav="about">About Us</a>
+      <a href="#" data-nav="gallery">Gallery</a>
+      <a href="#" data-nav="contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#" class="staff-link" data-nav="staff"><svg class="icon" style="width:1em;height:1em"><use href="#ic-lock"/></svg>Staff</a>
+      <a href="#" class="btn btn-ghost btn-sm" data-nav="register">Register</a>
+      <a href="#" class="btn btn-primary btn-sm" data-nav="book">Book Now</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="icon" id="menuIcon"><use href="#ic-menu"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="mobile-panel-inner">
+      <a href="#" data-nav="home">Home</a>
+      <a href="#" data-nav="services">Services</a>
+      <a href="#" data-nav="about">About Us</a>
+      <a href="#" data-nav="gallery">Gallery</a>
+      <a href="#" data-nav="contact">Contact</a>
+      <a href="#" data-nav="staff">Staff Portal</a>
+      <a href="#" class="btn btn-ghost btn-block" data-nav="register">Register as Patient</a>
+      <a href="#" class="btn btn-primary btn-block" data-nav="book">Book Appointment</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== HOME ===================== -->
+<section class="page active" id="page-home">
+
+  <div class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="hero-badge"><svg class="icon" style="width:1em;height:1em;color:var(--gold)"><use href="#ic-star"/></svg> Rated #1 dental practice in Accra, 2024</span>
+          <h1>Your smile deserves <em>expert</em> care</h1>
+          <p class="lead">Modern dentistry in a warm, welcoming corner of Accra. From routine check-ups to full smile transformations — Dacosta's Dentals has you covered.</p>
+          <div class="hero-ctas">
+            <a href="#" class="btn btn-primary" data-nav="book"><svg class="icon" style="width:1.1em;height:1.1em"><use href="#ic-calendar"/></svg> Book Appointment</a>
+            <a href="#" class="btn btn-light" data-nav="register"><svg class="icon" style="width:1.1em;height:1.1em"><use href="#ic-edit"/></svg> Register as Patient</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="ring"></div>
+          <div class="ring2"></div>
+          <div class="face">
+            <svg viewBox="0 0 200 200"><circle cx="60" cy="78" r="9" fill="#fff" opacity=".9"/><circle cx="140" cy="78" r="9" fill="#fff" opacity=".9"/><path d="M48 120c10 26 36 42 52 42s42-16 52-42" stroke="#FF6B45" stroke-width="9" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div class="chip chip-a"><strong>18</strong><span>Years caring for Accra</span></div>
+          <div class="chip chip-b"><strong>4,200+</strong><span>Happy patients</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-strip">
+      <div class="container">
+        <div class="stats-row">
+          <div class="stat"><strong>4,200+</strong><span>Happy patients</span></div>
+          <div class="stat"><strong>18</strong><span>Years experience</span></div>
+          <div class="stat"><strong>12</strong><span>Expert dentists</span></div>
+          <div class="stat"><strong>98%</strong><span>Patient satisfaction</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="smile-divider" viewBox="0 0 1440 54" preserveAspectRatio="none"><path d="M0,0 C 360,54 1080,54 1440,0 L1440,54 L0,54 Z" fill="var(--bg)"/></svg>
+
+  <section class="block services-home">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we offer</span>
+        <h2>Comprehensive dental services</h2>
+        <p>From prevention to cosmetic transformations, our team provides a full spectrum of dental care for every member of the family.</p>
+      </div>
+      <div class="grid grid-3" id="serviceHomeGrid"></div>
+      <div style="text-align:center;margin-top:38px;">
+        <a href="#" class="btn btn-ghost" data-nav="services">View all services <svg class="icon" style="width:1em;height:1em"><use href="#ic-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block team-preview" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our team</span>
+        <h2>Meet the specialists</h2>
+        <p>Every clinician at Dacosta's Dentals holds advanced postgraduate qualifications, with one thing in common — genuine care for every patient.</p>
+      </div>
+      <div class="grid grid-4" id="teamPreviewGrid"></div>
+    </div>
+  </section>
+
+  <section class="block testimonials">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What patients say</span>
+        <h2>Reviews &amp; testimonials</h2>
+      </div>
+      <div class="grid grid-3" id="testimonialGrid"></div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:64px;">
+    <div class="container">
+      <div class="cta-band">
+        <h3>Ready for a healthier smile? New patients are welcome — register today for a free initial consultation.</h3>
+        <div class="actions">
+          <a href="#" class="btn btn-primary" data-nav="register">Register free</a>
+          <a href="#" class="btn btn-ghost" data-nav="contact">Call us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="page" id="page-services">
+  <section class="block" style="padding-bottom:0;">
+    <div class="container">
+      <span class="eyebrow">Our expertise</span>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:680px;">Dental services for every stage of your smile</h2>
+      <p style="margin-top:14px;color:var(--ink-soft);max-width:600px;font-size:1.05rem;">Comprehensive care for every member of your family, from first tooth to golden years.</p>
+    </div>
+  </section>
+  <section class="block">
+    <div class="container">
+      <div class="grid grid-3" id="serviceFullGrid"></div>
+      <div class="cta-band" style="margin-top:48px;">
+        <h3>Not sure which treatment you need?</h3>
+        <div class="actions">
+          <a href="#" class="btn btn-primary" data-nav="book">Book free consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="page" id="page-about">
+  <section class="block" style="padding-bottom:0;">
+    <div class="container">
+      <span class="eyebrow">Our story</span>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:680px;">About Dacosta's Dentals</h2>
+      <p style="margin-top:14px;color:var(--ink-soft);max-width:600px;font-size:1.05rem;">Founded in 2006, we've been transforming smiles and changing lives in the heart of the community.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="container">
+      <div class="about-split">
+        <div>
+          <span class="eyebrow">Our mission</span>
+          <h3 style="font-size:1.6rem;margin-bottom:14px;">Dental care that puts patients first</h3>
+          <p>At Dacosta's Dentals, we believe everyone deserves a healthy, beautiful smile. Since opening our doors in 2006, we've combined clinical excellence with genuine warmth to create an experience patients actually look forward to.</p>
+          <p>Our facility houses digital X-ray technology, intraoral cameras, and 3D scanning equipment — because advanced tools mean more accurate diagnoses and better outcomes for you.</p>
+        </div>
+        <div>
+          <span class="eyebrow">Our journey</span>
+          <ul class="timeline" id="timelineList"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="background:var(--surface);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we stand for</span>
+        <h2>Our values</h2>
+      </div>
+      <div class="grid grid-4 values-grid" id="valuesGrid"></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The team</span>
+        <h2>Our dental family</h2>
+      </div>
+      <div class="grid grid-3" id="teamFullGrid"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section class="page" id="page-gallery">
+  <section class="block" style="padding-bottom:0;">
+    <div class="container">
+      <span class="eyebrow">Our practice</span>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:680px;">Gallery</h2>
+      <p style="margin-top:14px;color:var(--ink-soft);max-width:600px;font-size:1.05rem;">Take a look inside our modern, welcoming clinic and see the kind of smile transformations we achieve.</p>
+    </div>
+  </section>
+  <section class="block">
+    <div class="container">
+      <h3 style="margin-bottom:20px;">Our facility</h3>
+      <div class="grid grid-3" id="facilityGrid"></div>
+    </div>
+  </section>
+  <section class="block" style="padding-top:0;">
+    <div class="container">
+      <h3 style="margin-bottom:6px;">Before &amp; after</h3>
+      <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:20px;">Illustrative examples shown with patient consent. Individual results may vary.</p>
+      <div class="grid grid-3" id="baGrid"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="page" id="page-contact">
+  <section class="block">
+    <div class="container">
+      <span class="eyebrow">Get in touch</span>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:680px;margin-bottom:14px;">Contact us</h2>
+      <p style="color:var(--ink-soft);max-width:600px;font-size:1.05rem;margin-bottom:44px;">We're here Monday to Saturday. Call, email, or drop in — we'd love to hear from you.</p>
+
+      <div class="contact-grid">
+        <div>
+          <h3 style="font-size:1.2rem;margin-bottom:6px;">Find us</h3>
+          <div class="info-row">
+            <span class="icon-wrap" style="background:var(--mint-100);color:var(--teal-700);display:flex;align-items:center;justify-content:center;border-radius:12px;"><svg class="icon"><use href="#ic-pin"/></svg></span>
+            <div><h4>Address</h4><p>12 Independence Avenue, Accra, Ghana</p></div>
+          </div>
+          <div class="info-row">
+            <span class="icon-wrap" style="background:var(--mint-100);color:var(--teal-700);display:flex;align-items:center;justify-content:center;border-radius:12px;"><svg class="icon"><use href="#ic-phone"/></svg></span>
+            <div><h4>Phone</h4><p>+233 24 555 0142<br>Emergencies: +233 24 555 0199</p></div>
+          </div>
+          <div class="info-row">
+            <span class="icon-wrap" style="background:var(--mint-100);color:var(--teal-700);display:flex;align-items:center;justify-content:center;border-radius:12px;"><svg class="icon"><use href="#ic-mail"/></svg></span>
+            <div><h4>Email</h4><p>hello@dacostasdentals.com</p></div>
+          </div>
+          <h3 style="font-size:1.1rem;margin:28px 0 4px;">Opening hours</h3>
+          <table class="hours">
+            <tr><td>Monday – Friday</td><td>8:00am – 7:00pm</td></tr>
+            <tr><td>Saturday</td><td>9:00am – 4:00pm</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+            <tr><td>Public holidays</td><td>Emergency only</td></tr>
+          </table>
+        </div>
+
+        <div class="form-card">
+          <h3 style="font-size:1.2rem;margin-bottom:18px;">Send a message</h3>
+          <p style="color:var(--ink-soft);font-size:.88rem;margin-bottom:20px;">We aim to respond within 2 hours during opening hours.</p>
+          <div id="contactAlert"></div>
+          <form id="contactForm">
+            <div class="form-grid">
+              <div class="field"><label>First name</label><input type="text" required></div>
+              <div class="field"><label>Last name</label><input type="text" required></div>
+            </div>
+            <div class="form-grid">
+              <div class="field"><label>Email</label><input type="email" required></div>
+              <div class="field"><label>Phone (optional)</label><input type="tel"></div>
+            </div>
+            <div class="field">
+              <label>Subject</label>
+              <select required>
+                <option value="">Select a subject</option>
+                <option>General enquiry</option>
+                <option>Book appointment</option>
+                <option>Pricing information</option>
+                <option>Complaint / feedback</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field"><label>Message</label><textarea required></textarea></div>
+            <button class="btn btn-primary btn-block" type="submit">Send message <svg class="icon" style="width:1em;height:1em"><use href="#ic-arrow"/></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== REGISTER ===================== -->
+<section class="page" id="page-register">
+  <section class="block">
+    <div class="container form-narrow">
+      <span class="eyebrow">Patient registration</span>
+      <h2 style="margin-bottom:8px;">Join Dacosta's Dentals</h2>
+      <p style="color:var(--ink-soft);margin-bottom:28px;">Registration is free and takes about two minutes.</p>
+      <div class="form-card">
+        <div id="registerAlert"></div>
+        <form id="registerForm">
+          <div class="fieldset-title">Personal details</div>
+          <div class="form-grid">
+            <div class="field"><label>First name *</label><input type="text" id="regFirst" required></div>
+            <div class="field"><label>Last name *</label><input type="text" id="regLast" required></div>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label>Date of birth *</label><input type="date" id="regDob" required></div>
+            <div class="field"><label>Gender</label>
+              <select id="regGender"><option>Prefer not to say</option><option>Male</option><option>Female</option><option>Non-binary</option><option>Other</option></select>
+            </div>
+          </div>
+
+          <div class="fieldset-title">Contact details</div>
+          <div class="form-grid">
+            <div class="field"><label>Email address *</label><input type="email" id="regEmail" required></div>
+            <div class="field"><label>Phone *</label><input type="tel" id="regPhone" required></div>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label>Area / postcode *</label><input type="text" id="regArea" required></div>
+            <div class="field"><label>Address</label><input type="text" id="regAddress"></div>
+          </div>
+
+          <div class="fieldset-title">Medical history</div>
+          <div class="form-grid">
+            <div class="field"><label>GP / physician name</label><input type="text" id="regGp"></div>
+            <div class="field"><label>Known allergies</label><input type="text" id="regAllergies"></div>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label>Current medications</label><input type="text" id="regMeds"></div>
+            <div class="field"><label>Emergency contact name</label><input type="text" id="regEmName"></div>
+          </div>
+          <div class="field"><label>Emergency contact phone</label><input type="tel" id="regEmPhone"></div>
+
+          <div class="checkline"><input type="checkbox" required><span>I consent to Dacosta's Dentals storing my personal data for the purposes of providing dental care, in accordance with applicable data protection laws. *</span></div>
+          <div class="checkline"><input type="checkbox"><span>I am happy to receive appointment reminders and health tips by email/SMS.</span></div>
+
+          <button class="btn btn-primary btn-block" type="submit">Register now <svg class="icon" style="width:1em;height:1em"><use href="#ic-arrow"/></svg></button>
+          <p style="text-align:center;margin-top:16px;font-size:.88rem;color:var(--ink-soft);">Already registered? <a href="#" class="link-inline" data-nav="book">Book an appointment →</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== BOOK ===================== -->
+<section class="page" id="page-book">
+  <section class="block">
+    <div class="container form-narrow">
+      <span class="eyebrow">Appointments</span>
+      <h2 style="margin-bottom:8px;">Book an appointment</h2>
+      <p style="color:var(--ink-soft);margin-bottom:28px;">Available for registered patients. Fill in your details and we'll confirm your slot.</p>
+      <div class="form-card">
+        <div id="bookAlert"></div>
+        <form id="bookForm">
+          <div class="field">
+            <label>Patient email *</label>
+            <input type="email" id="bookEmail" required>
+            <span class="hint">Must match your registered account email.</span>
+          </div>
+          <div class="field">
+            <label>Treatment type *</label>
+            <select id="bookTreatment" required>
+              <option value="">Select treatment</option>
+              <option>General Check-up</option>
+              <option>Teeth Whitening</option>
+              <option>Dental Implant Consultation</option>
+              <option>Orthodontic Consultation</option>
+              <option>Emergency Appointment</option>
+              <option>Children's Check-up</option>
+              <option>Hygienist Visit</option>
+              <option>Cosmetic Consultation</option>
+              <option>Extraction</option>
+              <option>Filling</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Preferred dentist</label>
+            <select id="bookDentist">
+              <option>No preference</option>
+              <option>Dr. Daniel Dacosta</option>
+              <option>Dr. James Patel</option>
+              <option>Dr. Amara Mensah</option>
+              <option>Dr. Lily Wong</option>
+              <option>Dr. Ben Turner</option>
+              <option>Nina Kowalski (Hygienist)</option>
+            </select>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label>Preferred date *</label><input type="date" id="bookDate" required></div>
+            <div class="field"><label>Preferred time *</label>
+              <select id="bookTime" required>
+                <option value="">Select time</option>
+                <option>08:00</option><option>08:30</option><option>09:00</option><option>09:30</option>
+                <option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option>
+                <option>12:00</option><option>13:00</option><option>13:30</option><option>14:00</option>
+                <option>14:30</option><option>15:00</option><option>15:30</option><option>16:00</option>
+                <option>16:30</option><option>17:00</option><option>17:30</option><option>18:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label>Additional notes</label><textarea id="bookNotes"></textarea></div>
+          <div class="checkline"><input type="checkbox" id="bookReminders" checked><span>Send me email &amp; SMS reminders 24 hours before my appointment.</span></div>
+          <button class="btn btn-primary btn-block" type="submit">Confirm booking <svg class="icon" style="width:1em;height:1em"><use href="#ic-arrow"/></svg></button>
+          <p style="text-align:center;margin-top:16px;font-size:.88rem;color:var(--ink-soft);">Not registered yet? <a href="#" class="link-inline" data-nav="register">Register first →</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== STAFF ===================== -->
+<section class="page" id="page-staff">
+
+  <div id="staffLoginView">
+    <section class="block">
+      <div class="container staff-login-wrap">
+        <span class="icon-wrap" style="background:var(--teal-900);color:#fff;display:flex;align-items:center;justify-content:center;"><svg class="icon" style="width:1.6em;height:1.6em"><use href="#ic-lock"/></svg></span>
+        <h2 style="margin-bottom:8px;">Staff portal</h2>
+        <p style="color:var(--ink-soft);margin-bottom:28px;">Dacosta's Dentals practice management — authorised staff only.</p>
+        <div class="form-card" style="text-align:left;">
+          <div id="staffAlert"></div>
+          <div class="auth-switch" aria-label="Staff account options">
+            <button type="button" class="active" data-auth-view="login">Sign in</button>
+            <button type="button" data-auth-view="register">Register</button>
+          </div>
+          <form id="staffLoginForm" class="staff-auth-form">
+            <div class="field"><label>Email address</label><input type="email" id="staffEmail" autocomplete="email" required></div>
+            <div class="field"><label>Password</label><input type="password" id="staffPass" required></div>
+            <button class="btn btn-primary btn-block" type="submit">Sign in to portal <svg class="icon" style="width:1em;height:1em"><use href="#ic-arrow"/></svg></button>
+          </form>
+          <form id="staffRegisterForm" class="staff-auth-form" hidden>
+            <div class="field"><label>Full name</label><input type="text" id="staffRegName" autocomplete="name" required></div>
+            <div class="field"><label>Job title</label><input type="text" id="staffRegTitle" placeholder="e.g. Dental nurse" required></div>
+            <div class="field"><label>Phone</label><input type="tel" id="staffRegPhone" autocomplete="tel" required></div>
+            <div class="field"><label>Email address</label><input type="email" id="staffRegEmail" autocomplete="email" required></div>
+            <div class="field"><label>Password <span class="hint">Use at least 8 characters</span></label><input type="password" id="staffRegPass" minlength="8" autocomplete="new-password" required></div>
+            <button class="btn btn-primary btn-block" type="submit">Create staff account <svg class="icon" style="width:1em;height:1em"><use href="#ic-arrow"/></svg></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="staffPortalView" class="staff-shell">
+    <div class="portal-header">
+      <div class="portal-row">
+        <div class="portal-brand"><svg class="icon" style="width:1.2em;height:1.2em"><use href="#ic-tooth"/></svg> Dacosta's Dentals — <span id="staffDisplayName">Staff Portal</span></div>
+        <div style="display:flex;gap:10px;">
+          <a href="#" class="btn btn-light btn-sm" data-nav="home"><svg class="icon" style="width:1em;height:1em"><use href="#ic-arrow"/></svg> Back to site</a>
+          <button class="btn btn-light btn-sm" id="staffLogoutBtn"><svg class="icon" style="width:1em;height:1em"><use href="#ic-logout"/></svg> Sign out</button>
+        </div>
+      </div>
+    </div>
+    <div class="portal-tabs">
+      <div class="container">
+        <button class="portal-tab active" data-tab="dashboard"><svg class="icon" style="width:.95em;height:.95em;vertical-align:-1px;margin-right:5px;"><use href="#ic-chart"/></svg>Dashboard</button>
+        <button class="portal-tab" data-tab="patients"><svg class="icon" style="width:.95em;height:.95em;vertical-align:-1px;margin-right:5px;"><use href="#ic-users"/></svg>All Patients</button>
+        <button class="portal-tab" data-tab="future"><svg class="icon" style="width:.95em;height:.95em;vertical-align:-1px;margin-right:5px;"><use href="#ic-calendar"/></svg>Future Appointments</button>
+        <button class="portal-tab" data-tab="past"><svg class="icon" style="width:.95em;height:.95em;vertical-align:-1px;margin-right:5px;"><use href="#ic-clock"/></svg>Past Appointments</button>
+        <button class="portal-tab" data-tab="reports"><svg class="icon" style="width:.95em;height:.95em;vertical-align:-1px;margin-right:5px;"><use href="#ic-flag"/></svg>Reports</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- DASHBOARD -->
+      <div class="portal-panel active" data-panel="dashboard">
+        <h3 style="margin-bottom:18px;">Dashboard</h3>
+        <div class="dash-cards">
+          <div class="dash-card"><span class="icon-wrap" style="background:var(--mint-100);color:var(--teal-700);display:flex;align-items:center;justify-content:center;border-radius:10px;"><svg class="icon"><use href="#ic-calendar"/></svg></span><strong id="dashToday">0</strong><span>Today's appointments</span></div>
+          <div class="dash-card"><span class="icon-wrap" style="background:var(--mint-100);color:var(--teal-700);display:flex;align-items:center;justify-content:center;border-radius:10px;"><svg class="icon"><use href="#ic-users"/></svg></span><strong id="dashNew">0</strong><span>New registrations (7 days)</span></div>
+          <div class="dash-card"><span class="icon-wrap" style="background:var(--mint-100);color:var(--teal-700);display:flex;align-items:center;justify-content:center;border-radius:10px;"><svg class="icon"><use href="#ic-clock"/></svg></span><strong id="dashUpcoming">0</strong><span>Upcoming appointments</span></div>
+          <div class="dash-card"><span class="icon-wrap" style="background:var(--mint-100);color:var(--teal-700);display:flex;align-items:center;justify-content:center;border-radius:10px;"><svg class="icon"><use href="#ic-chart"/></svg></span><strong id="dashPatients">0</strong><span>Total patients</span></div>
+        </div>
+
+        <div class="panel-bar"><h3>Today's appointments</h3></div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Ref</th><th>Patient</th><th>Time</th><th>Treatment</th><th>Dentist</th><th>Status</th></tr></thead>
+            <tbody id="dashTodayTable"></tbody>
+          </table>
+        </div>
+
+        <div class="panel-bar"><h3>Recent registrations</h3></div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Patient ID</th><th>Name</th><th>Email</th><th>Registered</th></tr></thead>
+            <tbody id="dashRecentTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PATIENTS -->
+      <div class="portal-panel" data-panel="patients">
+        <div class="panel-bar">
+          <h3>Patient list</h3>
+          <button class="btn btn-ghost btn-sm" id="exportPatientsBtn"><svg class="icon" style="width:1em;height:1em"><use href="#ic-download"/></svg> Export CSV</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Patient ID</th><th>Name</th><th>DOB</th><th>Email</th><th>Phone</th><th>Registered</th><th>Actions</th></tr></thead>
+            <tbody id="patientsTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FUTURE -->
+      <div class="portal-panel" data-panel="future">
+        <div class="panel-bar">
+          <h3>Future appointments</h3>
+          <div class="filters">
+            <select id="futureDentistFilter">
+              <option value="">All dentists</option>
+              <option>Dr. Daniel Dacosta</option><option>Dr. James Patel</option><option>Dr. Amara Mensah</option>
+              <option>Dr. Lily Wong</option><option>Dr. Ben Turner</option><option>Nina Kowalski (Hygienist)</option>
+            </select>
+            <button class="btn btn-ghost btn-sm" id="exportFutureBtn"><svg class="icon" style="width:1em;height:1em"><use href="#ic-download"/></svg> Export CSV</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Ref</th><th>Patient</th><th>Date</th><th>Time</th><th>Treatment</th><th>Dentist</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="futureTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PAST -->
+      <div class="portal-panel" data-panel="past">
+        <div class="panel-bar">
+          <h3>Past appointments</h3>
+          <button class="btn btn-ghost btn-sm" id="exportPastBtn"><svg class="icon" style="width:1em;height:1em"><use href="#ic-download"/></svg> Export CSV</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Ref</th><th>Patient</th><th>Date</th><th>Time</th><th>Treatment</th><th>Dentist</th><th>Status</th></tr></thead>
+            <tbody id="pastTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- REPORTS -->
+      <div class="portal-panel" data-panel="reports">
+        <h3 style="margin-bottom:18px;">Reports</h3>
+        <div class="grid grid-2 reports-grid">
+          <div class="card">
+            <div class="icon-wrap"><svg class="icon"><use href="#ic-chart"/></svg></div>
+            <h4>Monthly appointment summary</h4>
+            <p>Appointments by month, dentist, and treatment type.</p>
+            <button class="btn btn-dark btn-sm" style="margin-top:14px;" data-report="monthly">Generate report</button>
+            <div class="report-result" id="report-monthly"></div>
+          </div>
+          <div class="card">
+            <div class="icon-wrap"><svg class="icon"><use href="#ic-users"/></svg></div>
+            <h4>New patient registrations</h4>
+            <p>Weekly and monthly registration trends.</p>
+            <button class="btn btn-dark btn-sm" style="margin-top:14px;" data-report="registrations">Generate report</button>
+            <div class="report-result" id="report-registrations"></div>
+          </div>
+          <div class="card">
+            <div class="icon-wrap"><svg class="icon"><use href="#ic-tooth"/></svg></div>
+            <h4>Treatment breakdown</h4>
+            <p>Most popular treatments and frequency analysis.</p>
+            <button class="btn btn-dark btn-sm" style="margin-top:14px;" data-report="treatments">Generate report</button>
+            <div class="report-result" id="report-treatments"></div>
+          </div>
+          <div class="card">
+            <div class="icon-wrap"><svg class="icon"><use href="#ic-flag"/></svg></div>
+            <h4>No-show &amp; cancellation</h4>
+            <p>Track missed appointments and cancellation rates.</p>
+            <button class="btn btn-dark btn-sm" style="margin-top:14px;" data-report="noshow">Generate report</button>
+            <div class="report-result" id="report-noshow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:#fff;margin-bottom:14px;">
+          <span class="brand-mark" style="background:rgba(255,255,255,.12);">
+            <svg viewBox="0 0 38 38" width="38" height="38"><circle cx="6" cy="13" r="1.6" fill="#fff"/><circle cx="14" cy="13" r="1.6" fill="#fff"/><path d="M5 21c1.6 3.2 4.4 5 5 5s3.4-1.8 5-5" stroke="#FF6B45" stroke-width="2.1" fill="none" stroke-linecap="round" transform="translate(4,0)"/></svg>
+          </span>
+          <span style="color:#fff;">Dacosta's Dentals</span>
+        </div>
+        <p style="font-size:.88rem;max-width:280px;">Modern dentistry with a personal touch. Serving the Accra community since 2006.</p>
+      </div>
+      <div>
+        <h5>Quick links</h5>
+        <ul>
+          <li><a href="#" data-nav="home">Home</a></li>
+          <li><a href="#" data-nav="services">Services</a></li>
+          <li><a href="#" data-nav="about">About us</a></li>
+          <li><a href="#" data-nav="gallery">Gallery</a></li>
+          <li><a href="#" data-nav="contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Patient area</h5>
+        <ul>
+          <li><a href="#" data-nav="register">Register</a></li>
+          <li><a href="#" data-nav="book">Book appointment</a></li>
+          <li><a href="#" data-nav="contact">Enquiries</a></li>
+          <li><a href="#" data-nav="staff">Staff login</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>12 Independence Avenue, Accra, Ghana</li>
+          <li>+233 24 555 0142</li>
+          <li>hello@dacostasdentals.com</li>
+          <li>Mon–Fri: 8am – 7pm</li>
+          <li>Saturday: 9am – 4pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Dacosta's Dentals. All rights reserved.</span>
+      <span>Registered with the Ghana Health Service.</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast"></div>
+
+<script type="module">
+import { signup, login, logout, getUser, handleAuthCallback } from 'https://esm.sh/@netlify/identity@2.0.0';
+
+window.staffIdentity = { signup, login, logout, getUser };
+
+try {
+  const callback = await handleAuthCallback();
+  const user = callback?.user || await getUser();
+  if (user?.roles?.some(role => role === 'staff' || role === 'admin')) {
+    await window.staffSignedIn(user);
+    if (callback?.type === 'confirmation') window.showToast('Email confirmed — welcome to the staff portal');
+  }
+} catch (error) {
+  document.getElementById('staffAlert').innerHTML = `<div class="alert error">${error.message || 'Unable to complete authentication.'}</div>`;
+}
+</script>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+const services = [
+  {icon:'ic-search', name:'General Check-up', desc:'Full examination & professional cleaning every 6 months.', long:'Routine check-ups, X-rays, scale & polish, fillings, extractions, and preventive treatments.', price:'From GH₵ 250'},
+  {icon:'ic-sparkle', name:'Teeth Whitening', desc:'Brighten your smile by up to 8 shades in a single visit.', long:'Teeth whitening, porcelain veneers, composite bonding, and smile makeovers.', price:'From GH₵ 1,100', group:'Cosmetic Dentistry'},
+  {icon:'ic-tooth', name:'Implants', desc:'Permanent, natural-looking replacements for missing teeth.', long:'Titanium implants, all-on-4, implant-supported bridges and dentures.', price:'From GH₵ 9,800', group:'Dental Implants'},
+  {icon:'ic-braces', name:'Orthodontics', desc:'Braces & clear aligners for a perfectly aligned smile.', long:'Traditional braces, ceramic braces, clear aligners, and retainers for all ages.', price:'From GH₵ 6,500'},
+  {icon:'ic-shield', name:'Emergency Care', desc:'Same-day appointments for urgent dental pain & injuries.', long:'Same-day appointments for severe toothache, lost fillings, broken teeth, and abscesses.', price:'Call for pricing'},
+  {icon:'ic-child', name:'Paediatric', desc:'Gentle, fun dental care tailored for children of all ages.', long:"Child-friendly check-ups, fissure sealants, fluoride treatments, early orthodontic assessments.", price:'From GH₵ 160', group:"Children's Dentistry"},
+  {icon:'ic-moon', name:'Sedation Dentistry', desc:'Calm, comfortable care for anxious patients.', long:'Inhalation sedation and IV sedation for anxious patients or complex procedures.', price:'From GH₵ 820'},
+  {icon:'ic-gum', name:'Periodontal Treatment', desc:'Deep cleaning and gum disease management.', long:'Deep cleaning, root surface debridement, and gum disease management.', price:'From GH₵ 440'},
+];
+
+const team = [
+  {initials:'DD', name:'Dr. Daniel Dacosta', role:'Principal Dentist', cred:'BDS (London), MFDS RCS — 14 yrs', interest:'Special interest: Cosmetics', color:'#11534C'},
+  {initials:'JP', name:'Dr. James Patel', role:'Orthodontist', cred:'BDS, MOrth RCS — 10 yrs', interest:'Special interest: Invisalign', color:'#FF6B45'},
+  {initials:'AM', name:'Dr. Amara Mensah', role:'Oral Surgeon', cred:'BDS, MFDS RCPS — 8 yrs', interest:'Special interest: Implants', color:'#0C3B36'},
+  {initials:'LW', name:'Dr. Lily Wong', role:'Cosmetic Dentist', cred:'BDS, MClinDent — 7 yrs', interest:'Special interest: Veneers', color:'#E3A93C'},
+  {initials:'BT', name:'Dr. Ben Turner', role:'Associate Dentist', cred:'BDS (Manchester)', interest:'Special interest: Paediatrics', color:'#156B61'},
+  {initials:'NK', name:'Nina Kowalski', role:'Lead Hygienist', cred:'DipDH, 9 years exp', interest:'Periodontology', color:'#4C6B64'},
+];
+
+const testimonials = [
+  {name:'James M.', since:'Patient since 2019', text:'Absolutely fantastic practice. Dr. Dacosta was so gentle and thorough. My anxiety about dentists is completely gone.'},
+  {name:'Raha A.', since:'Patient since 2021', text:'The whitening treatment gave me incredible results. Staff are so professional and the clinic is spotlessly clean.'},
+  {name:'Kwame O.', since:'Patient since 2022', text:'Brought my kids here and they actually enjoyed the visit. Dr. Mensah has a wonderful way with children.'},
+];
+
+const timelineData = [
+  {year:'2006', title:'Founded', text:'Dr. Dacosta opened the practice with 2 chairs and a vision.'},
+  {year:'2010', title:'Expanded', text:'Added an orthodontics suite and implant theatre.'},
+  {year:'2015', title:'Digital upgrade', text:'Full digital X-ray and intraoral scanner rollout.'},
+  {year:'2019', title:'Award winner', text:'Named Best Dental Practice, Regional Health Awards.'},
+  {year:'2024', title:'4,000 patients', text:'Reached the milestone of 4,000 registered patients.'},
+];
+
+const valuesData = [
+  {icon:'ic-users', title:'Patient-centred', text:'Every decision we make is guided by what is best for you — not what is easiest for us.'},
+  {icon:'ic-flag', title:'Clinical excellence', text:'All our dentists hold advanced postgraduate qualifications and commit to ongoing CPD.'},
+  {icon:'ic-mail', title:'Open communication', text:'We explain every treatment option clearly, with honest pricing and zero pressure.'},
+  {icon:'ic-gum', title:'Sustainability', text:'Digital records, eco-friendly products, and a paperless appointment system.'},
+];
+
+const facilityData = [
+  {icon:'ic-pin', label:'Reception & Waiting Area', color:'#11534C'},
+  {icon:'ic-tooth', label:'Treatment Suite 1', color:'#FF6B45'},
+  {icon:'ic-search', label:'Digital X-ray Room', color:'#0C3B36'},
+  {icon:'ic-sparkle', label:'Cosmetic Suite', color:'#E3A93C'},
+  {icon:'ic-shield', label:'Implant Theatre', color:'#156B61'},
+  {icon:'ic-child', label:"Children's Room", color:'#4C6B64'},
+];
+
+const baData = [
+  {title:'Teeth whitening — 6 shades', a:'#0C3B36', b:'#E3A93C'},
+  {title:'Porcelain veneers', a:'#11534C', b:'#FF6B45'},
+  {title:'Orthodontic alignment', a:'#156B61', b:'#4C6B64'},
+];
+
+/* Database-backed app state */
+let patients = [];
+let appointments = [];
+
+async function apiRequest(path, options={}){
+  const response = await fetch(path, {
+    ...options,
+    headers: {'Content-Type':'application/json', ...(options.headers||{})},
+  });
+  const data = response.status===204 ? null : await response.json().catch(()=>({}));
+  if(!response.ok) throw new Error(data?.error || 'Something went wrong. Please try again.');
+  return data;
+}
+
+async function loadDatabaseData(){
+  [patients, appointments] = await Promise.all([
+    apiRequest('/api/patients'),
+    apiRequest('/api/appointments'),
+  ]);
+}
+
+/* ============================================================
+   RENDER: marketing content
+   ============================================================ */
+function serviceCard(s, withGroup){
+  return `<div class="card">
+    <div class="icon-wrap"><svg class="icon"><use href="#${s.icon}"/></svg></div>
+    <h3>${withGroup && s.group ? s.group : s.name}</h3>
+    <p>${withGroup ? s.long : s.desc}</p>
+    ${withGroup ? `<div class="price">${s.price}</div>` : ''}
+  </div>`;
+}
+document.getElementById('serviceHomeGrid').innerHTML = services.slice(0,6).map(s=>serviceCard(s,false)).join('');
+document.getElementById('serviceFullGrid').innerHTML = services.map(s=>serviceCard(s,true)).join('');
+
+function teamCard(t){
+  return `<div class="card" style="text-align:center;">
+    <div class="avatar" style="background:${t.color}">${t.initials}</div>
+    <h4>${t.name}</h4>
+    <div class="role">${t.role}</div>
+    <div class="cred">${t.cred}</div>
+    ${t.interest ? `<div class="cred">${t.interest}</div>`:''}
+  </div>`;
+}
+document.getElementById('teamPreviewGrid').innerHTML = team.slice(0,4).map(teamCard).join('');
+document.getElementById('teamFullGrid').innerHTML = team.map(teamCard).join('');
+
+document.getElementById('testimonialGrid').innerHTML = testimonials.map(t=>`
+  <div class="t-card">
+    <div class="stars">${'<svg class="icon"><use href="#ic-star"/></svg>'.repeat(5)}</div>
+    <p>"${t.text}"</p>
+    <div class="t-by">
+      <div class="avatar" style="background:var(--coral);width:36px;height:36px;font-size:.7rem;">${t.name.split(' ').map(p=>p[0]).join('')}</div>
+      <div><strong>${t.name}</strong><span>${t.since}</span></div>
+    </div>
+  </div>
+`).join('');
+
+document.getElementById('timelineList').innerHTML = timelineData.map(t=>`
+  <li><span class="year">${t.year}</span><h4>${t.title}</h4><p>${t.text}</p></li>
+`).join('');
+
+document.getElementById('valuesGrid').innerHTML = valuesData.map(v=>`
+  <div class="card"><div class="icon-wrap" style="background:rgba(255,255,255,.6);"><svg class="icon"><use href="#${v.icon}"/></svg></div><h4>${v.title}</h4><p>${v.text}</p></div>
+`).join('');
+
+document.getElementById('facilityGrid').innerHTML = facilityData.map(f=>`
+  <div class="tile" style="background:${f.color}"><svg class="icon" style="color:#fff;"><use href="#${f.icon}"/></svg>${f.label}</div>
+`).join('');
+
+document.getElementById('baGrid').innerHTML = baData.map(b=>`
+  <div class="ba-card">
+    <div class="ba-imgs">
+      <div style="background:${b.a}">Before</div>
+      <div style="background:${b.b}">After</div>
+    </div>
+    <h4>${b.title}</h4>
+  </div>
+`).join('');
+
+/* ============================================================
+   NAVIGATION (SPA)
+   ============================================================ */
+function goTo(target){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const el = document.getElementById('page-'+target);
+  if(el) el.classList.add('active');
+  document.querySelectorAll('.main-nav a').forEach(a=>a.classList.toggle('active', a.dataset.nav===target));
+  document.getElementById('mobilePanel').classList.remove('open');
+  document.getElementById('menuToggle').setAttribute('aria-expanded','false');
+  window.scrollTo({top:0,behavior:'instant' in window ? 'instant':'auto'});
+  if(target==='staff' && window.staffIdentity){
+    window.staffIdentity.getUser().then(user=>{
+      if(user?.roles?.some(role=>role==='staff'||role==='admin')) window.staffSignedIn(user);
+    });
+  }
+}
+document.querySelectorAll('[data-nav]').forEach(el=>{
+  el.addEventListener('click', e=>{
+    e.preventDefault();
+    goTo(el.dataset.nav);
+  });
+});
+
+const menuToggle = document.getElementById('menuToggle');
+const mobilePanel = document.getElementById('mobilePanel');
+menuToggle.addEventListener('click', ()=>{
+  const open = mobilePanel.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', open ? 'true':'false');
+  document.getElementById('menuIcon').innerHTML = open ? '<use href="#ic-close"/>' : '<use href="#ic-menu"/>';
+});
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+let toastTimer;
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.innerHTML = `<svg class="icon" style="width:1.1em;height:1.1em;color:var(--gold)"><use href="#ic-check"/></svg> ${msg}`;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 3200);
+}
+
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+document.getElementById('contactForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  document.getElementById('contactAlert').innerHTML = `<div class="alert success"><svg class="icon" style="width:1.2em;height:1.2em"><use href="#ic-check"/></svg> Thanks — your message has been sent. We'll be in touch within 2 working hours.</div>`;
+  e.target.reset();
+  showToast('Message sent');
+});
+
+/* ============================================================
+   REGISTER FORM
+   ============================================================ */
+document.getElementById('registerForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const email = document.getElementById('regEmail').value.trim().toLowerCase();
+  try {
+    const patient = await apiRequest('/api/patients', {method:'POST', body:JSON.stringify({
+      firstName: document.getElementById('regFirst').value,
+      lastName: document.getElementById('regLast').value,
+      dob: document.getElementById('regDob').value,
+      gender: document.getElementById('regGender').value,
+      email,
+      phone: document.getElementById('regPhone').value,
+      area: document.getElementById('regArea').value,
+    })});
+    patients.unshift(patient);
+    document.getElementById('registerAlert').innerHTML = `<div class="alert success"><svg class="icon" style="width:1.2em;height:1.2em"><use href="#ic-check"/></svg> Welcome to Dacosta's Dentals! Your patient ID is <strong>${patient.id}</strong>. You can now book an appointment.</div>`;
+    e.target.reset();
+    showToast('Registration complete — ID '+patient.id);
+  } catch(error) {
+    document.getElementById('registerAlert').innerHTML = `<div class="alert error"><svg class="icon" style="width:1.2em;height:1.2em"><use href="#ic-close"/></svg> ${error.message}</div>`;
+  }
+});
+
+/* ============================================================
+   BOOK FORM
+   ============================================================ */
+document.getElementById('bookForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const email = document.getElementById('bookEmail').value.trim().toLowerCase();
+  try {
+    const appointment = await apiRequest('/api/appointments', {method:'POST', body:JSON.stringify({
+      email,
+      treatment: document.getElementById('bookTreatment').value,
+      dentist: document.getElementById('bookDentist').value,
+      date: document.getElementById('bookDate').value,
+      time: document.getElementById('bookTime').value,
+      notes: document.getElementById('bookNotes').value,
+      reminders: document.getElementById('bookReminders').checked,
+    })});
+    appointments.push(appointment);
+    document.getElementById('bookAlert').innerHTML = `<div class="alert success"><svg class="icon" style="width:1.2em;height:1.2em"><use href="#ic-check"/></svg> Booking confirmed — reference <strong>${appointment.ref}</strong>. We'll send a confirmation to ${email}.</div>`;
+    e.target.reset();
+    document.getElementById('bookReminders').checked = true;
+    showToast('Appointment booked — '+appointment.ref);
+  } catch(error) {
+    document.getElementById('bookAlert').innerHTML = `<div class="alert error"><svg class="icon" style="width:1.2em;height:1.2em"><use href="#ic-close"/></svg> ${error.message}</div>`;
+  }
+});
+
+/* ============================================================
+   STAFF LOGIN / PORTAL
+   ============================================================ */
+document.querySelectorAll('[data-auth-view]').forEach(button=>{
+  button.addEventListener('click', ()=>{
+    const registering = button.dataset.authView==='register';
+    document.querySelectorAll('[data-auth-view]').forEach(item=>item.classList.toggle('active', item===button));
+    document.getElementById('staffLoginForm').hidden = registering;
+    document.getElementById('staffRegisterForm').hidden = !registering;
+    document.getElementById('staffAlert').innerHTML = '';
+  });
+});
+
+window.staffSignedIn = async function(user){
+  await loadDatabaseData();
+  document.getElementById('staffLoginView').style.display='none';
+  document.getElementById('staffPortalView').style.display='block';
+  document.getElementById('staffDisplayName').textContent = user.name || user.email || 'Staff Portal';
+  renderStaffData();
+};
+
+document.getElementById('staffLoginForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const button = e.submitter;
+  button.disabled = true;
+  try {
+    if(!window.staffIdentity) throw new Error('Authentication is still loading. Please try again.');
+    const user = await window.staffIdentity.login(
+      document.getElementById('staffEmail').value.trim().toLowerCase(),
+      document.getElementById('staffPass').value
+    );
+    if(!user.roles?.some(role=>role==='staff'||role==='admin')){
+      await window.staffIdentity.logout();
+      throw new Error('This account does not have staff access.');
+    }
+    await window.staffSignedIn(user);
+    document.getElementById('staffAlert').innerHTML='';
+  } catch(error) {
+    document.getElementById('staffAlert').innerHTML = `<div class="alert error"><svg class="icon" style="width:1.2em;height:1.2em"><use href="#ic-close"/></svg> ${error.message || 'Unable to sign in.'}</div>`;
+  } finally {
+    button.disabled = false;
+  }
+});
+
+document.getElementById('staffRegisterForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const button = e.submitter;
+  button.disabled = true;
+  try {
+    if(!window.staffIdentity) throw new Error('Authentication is still loading. Please try again.');
+    const user = await window.staffIdentity.signup(
+      document.getElementById('staffRegEmail').value.trim().toLowerCase(),
+      document.getElementById('staffRegPass').value,
+      {
+        full_name: document.getElementById('staffRegName').value.trim(),
+        phone: document.getElementById('staffRegPhone').value.trim(),
+        job_title: document.getElementById('staffRegTitle').value.trim(),
+      }
+    );
+    e.target.reset();
+    if(user.confirmedAt && user.roles?.some(role=>role==='staff'||role==='admin')){
+      await window.staffSignedIn(user);
+      showToast('Staff account created');
+    } else {
+      document.getElementById('staffAlert').innerHTML = `<div class="alert success"><svg class="icon" style="width:1.2em;height:1.2em"><use href="#ic-check"/></svg> Account created. Check your email to confirm your address, then sign in.</div>`;
+    }
+  } catch(error) {
+    document.getElementById('staffAlert').innerHTML = `<div class="alert error"><svg class="icon" style="width:1.2em;height:1.2em"><use href="#ic-close"/></svg> ${error.message || 'Unable to create the account.'}</div>`;
+  } finally {
+    button.disabled = false;
+  }
+});
+
+document.getElementById('staffLogoutBtn').addEventListener('click', async ()=>{
+  try { await window.staffIdentity?.logout(); } catch(error) { showToast(error.message); }
+  document.getElementById('staffPortalView').style.display='none';
+  document.getElementById('staffLoginView').style.display='block';
+  document.getElementById('staffLoginForm').reset();
+  document.getElementById('staffAlert').innerHTML='';
+  showToast('Signed out of staff portal');
+});
+
+document.querySelectorAll('.portal-tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    document.querySelectorAll('.portal-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.portal-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector(`.portal-panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
+  });
+});
+
+function todayISO(){ return new Date().toISOString().slice(0,10); }
+
+function renderStaffData(){
+  // dashboard counts
+  const today = todayISO();
+  const todays = appointments.filter(a=>a.date===today);
+  const upcoming = appointments.filter(a=>a.status==='upcoming' && a.date >= today);
+  const weekAgo = new Date(); weekAgo.setDate(weekAgo.getDate()-7);
+  const newRegs = patients.filter(p=> new Date(p.registeredAt) >= weekAgo);
+
+  document.getElementById('dashToday').textContent = todays.length;
+  document.getElementById('dashNew').textContent = newRegs.length;
+  document.getElementById('dashUpcoming').textContent = upcoming.length;
+  document.getElementById('dashPatients').textContent = patients.length;
+
+  document.getElementById('dashTodayTable').innerHTML = todays.length ? todays.map(a=>apptRow(a,{showDate:false, showActions:false})).join('') :
+    `<tr class="empty-row"><td colspan="6">No appointments scheduled for today.</td></tr>`;
+
+  const recent = [...patients].sort((a,b)=> new Date(b.registeredAt)-new Date(a.registeredAt)).slice(0,5);
+  document.getElementById('dashRecentTable').innerHTML = recent.length ? recent.map(p=>`
+    <tr><td>${p.id}</td><td>${p.firstName} ${p.lastName}</td><td>${p.email}</td><td>${fmtDate(p.registeredAt)}</td></tr>
+  `).join('') : `<tr class="empty-row"><td colspan="4">No registrations yet.</td></tr>`;
+
+  renderPatientsTable();
+  renderFutureTable();
+  renderPastTable();
+}
+
+function fmtDate(iso){
+  const d = new Date(iso);
+  return d.toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'});
+}
+
+function renderPatientsTable(){
+  const tbody = document.getElementById('patientsTable');
+  tbody.innerHTML = patients.length ? patients.map(p=>`
+    <tr>
+      <td>${p.id}</td><td>${p.firstName} ${p.lastName}</td><td>${p.dob||'—'}</td>
+      <td>${p.email}</td><td>${p.phone}</td><td>${fmtDate(p.registeredAt)}</td>
+      <td><button class="icon-action" title="Edit"><svg class="icon" style="width:1em;height:1em"><use href="#ic-edit"/></svg></button>
+          <button class="icon-action" title="Remove" onclick="removePatient('${p.id}')"><svg class="icon" style="width:1em;height:1em"><use href="#ic-trash"/></svg></button></td>
+    </tr>
+  `).join('') : `<tr class="empty-row"><td colspan="7">No patients registered yet.</td></tr>`;
+}
+async function removePatient(id){
+  try {
+    const patientEmail = patients.find(p=>p.id===id)?.email;
+    await apiRequest('/api/patients/'+encodeURIComponent(id), {method:'DELETE'});
+    patients = patients.filter(p=>p.id!==id);
+    appointments = appointments.filter(a=>a.patientEmail!==patientEmail);
+    renderStaffData();
+    showToast('Patient record removed');
+  } catch(error) { showToast(error.message); }
+}
+
+function apptRow(a, opts){
+  opts = opts || {};
+  const badgeClass = a.status==='upcoming' ? 'upcoming' : a.status==='completed' ? 'completed' : 'cancelled';
+  const dateCell = opts.showDate ? `<td>${a.date}</td>` : '';
+  const actionsCell = opts.showActions ? `<td>
+      <button class="icon-action" title="Mark completed" onclick="setApptStatus('${a.ref}','completed')"><svg class="icon" style="width:1em;height:1em"><use href="#ic-check"/></svg></button>
+      <button class="icon-action" title="Cancel" onclick="setApptStatus('${a.ref}','cancelled')"><svg class="icon" style="width:1em;height:1em"><use href="#ic-close"/></svg></button>
+    </td>` : '';
+  return `<tr>
+    <td>${a.ref}</td><td>${a.patientName}</td>
+    ${dateCell}<td>${a.time}</td>
+    <td>${a.treatment}</td><td>${a.dentist||'No preference'}</td>
+    <td><span class="badge ${badgeClass}">${a.status}</span></td>
+    ${actionsCell}
+  </tr>`;
+}
+
+function renderFutureTable(){
+  const filter = document.getElementById('futureDentistFilter').value;
+  const today = todayISO();
+  let list = appointments.filter(a=> a.date >= today && a.status!=='completed');
+  if(filter) list = list.filter(a=>a.dentist===filter);
+  list.sort((a,b)=> a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
+  document.getElementById('futureTable').innerHTML = list.length ? list.map(a=>apptRow(a,{showDate:true, showActions:true})).join('') :
+    `<tr class="empty-row"><td colspan="8">No upcoming appointments match this filter.</td></tr>`;
+}
+document.getElementById('futureDentistFilter').addEventListener('change', renderFutureTable);
+
+function renderPastTable(){
+  const today = todayISO();
+  let list = appointments.filter(a=> a.date < today || a.status==='completed' || a.status==='cancelled');
+  list.sort((a,b)=> b.date.localeCompare(a.date));
+  document.getElementById('pastTable').innerHTML = list.length ? list.map(a=>apptRow(a,{showDate:true, showActions:false})).join('') :
+    `<tr class="empty-row"><td colspan="7">No past appointments yet.</td></tr>`;
+}
+
+async function setApptStatus(ref, status){
+  const a = appointments.find(x=>x.ref===ref);
+  if(!a) return;
+  try {
+    await apiRequest('/api/appointments/'+encodeURIComponent(ref), {method:'PATCH', body:JSON.stringify({status})});
+    a.status = status;
+    renderStaffData();
+    showToast('Appointment '+ref+' marked '+status);
+  } catch(error) { showToast(error.message); }
+}
+
+/* CSV export */
+function toCSV(rows, headers){
+  const esc = v => `"${String(v??'').replace(/"/g,'""')}"`;
+  return [headers.map(esc).join(','), ...rows.map(r=>r.map(esc).join(','))].join('\n');
+}
+function downloadCSV(content, filename){
+  const blob = new Blob([content], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+document.getElementById('exportPatientsBtn').addEventListener('click', ()=>{
+  const csv = toCSV(patients.map(p=>[p.id,p.firstName+' '+p.lastName,p.dob,p.email,p.phone,p.area,fmtDate(p.registeredAt)]),
+    ['Patient ID','Name','DOB','Email','Phone','Area','Registered']);
+  downloadCSV(csv, 'dacostas-dentals-patients.csv');
+  showToast('Patients CSV downloaded');
+});
+document.getElementById('exportFutureBtn').addEventListener('click', ()=>{
+  const today = todayISO();
+  const list = appointments.filter(a=> a.date>=today && a.status!=='completed');
+  const csv = toCSV(list.map(a=>[a.ref,a.patientName,a.date,a.time,a.treatment,a.dentist,a.status]),
+    ['Ref','Patient','Date','Time','Treatment','Dentist','Status']);
+  downloadCSV(csv, 'dacostas-dentals-future-appointments.csv');
+  showToast('Future appointments CSV downloaded');
+});
+document.getElementById('exportPastBtn').addEventListener('click', ()=>{
+  const today = todayISO();
+  const list = appointments.filter(a=> a.date<today || a.status==='completed' || a.status==='cancelled');
+  const csv = toCSV(list.map(a=>[a.ref,a.patientName,a.date,a.time,a.treatment,a.dentist,a.status]),
+    ['Ref','Patient','Date','Time','Treatment','Dentist','Status']);
+  downloadCSV(csv, 'dacostas-dentals-past-appointments.csv');
+  showToast('Past appointments CSV downloaded');
+});
+
+/* reports */
+document.querySelectorAll('[data-report]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const type = btn.dataset.report;
+    const box = document.getElementById('report-'+type);
+    box.classList.add('show');
+    if(type==='monthly'){
+      const byDentist = {};
+      appointments.forEach(a=>{ byDentist[a.dentist||'No preference'] = (byDentist[a.dentist||'No preference']||0)+1; });
+      box.innerHTML = `<strong>${appointments.length}</strong> total appointments on record.<br>` +
+        Object.entries(byDentist).map(([d,c])=>`${d}: <strong>${c}</strong>`).join('<br>');
+    } else if(type==='registrations'){
+      const weekAgo = new Date(); weekAgo.setDate(weekAgo.getDate()-7);
+      const monthAgo = new Date(); monthAgo.setDate(monthAgo.getDate()-30);
+      const week = patients.filter(p=>new Date(p.registeredAt)>=weekAgo).length;
+      const month = patients.filter(p=>new Date(p.registeredAt)>=monthAgo).length;
+      box.innerHTML = `<strong>${week}</strong> new patients in the last 7 days.<br><strong>${month}</strong> new patients in the last 30 days.<br><strong>${patients.length}</strong> patients registered in total.`;
+    } else if(type==='treatments'){
+      const byTreatment = {};
+      appointments.forEach(a=>{ byTreatment[a.treatment] = (byTreatment[a.treatment]||0)+1; });
+      const sorted = Object.entries(byTreatment).sort((a,b)=>b[1]-a[1]);
+      box.innerHTML = sorted.length ? sorted.map(([t,c])=>`${t}: <strong>${c}</strong>`).join('<br>') : 'No treatment data yet.';
+    } else if(type==='noshow'){
+      const cancelled = appointments.filter(a=>a.status==='cancelled').length;
+      const total = appointments.length || 1;
+      box.innerHTML = `<strong>${cancelled}</strong> cancelled appointment(s) out of ${appointments.length} total — a <strong>${Math.round(cancelled/total*100)}%</strong> cancellation rate.`;
+    }
+  });
+});
+
+/* init */
+</script>
+<script async src="/.netlify/scripts/ar" data-netlify-deploy-id="6abc7d9be7c8fd0007810cca" data-netlify-site-id="49ec4d48-2165-4866-a179-afacffad4a35" data-agent-runner-id="6abc7cdd66509ac975b649c1"></script>
+</body>
+</html>
